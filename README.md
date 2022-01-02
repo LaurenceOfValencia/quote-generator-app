@@ -1,1 +1,1 @@
-"# quote-generator-app" 
+"quote-generator-app" 
