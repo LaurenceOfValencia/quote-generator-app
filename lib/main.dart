@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 void main() {
   runApp(const MyApp());
@@ -63,11 +62,8 @@ Widget buildButton(name, order) => ExpansionTile(
       title: Text("$order. " + name),
       children: [
         ListTile(
-            trailing: Text('Generate Quote!'),
-            onTap: () => _showMyDialog() //print("quote should appear"),
-            )
+          trailing: Text('Generate Quote!'),
+          onTap: () => print("quote should appear"),
+        )
       ],
     );
-
-//generateNewRand () => ;
-
