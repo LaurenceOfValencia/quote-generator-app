@@ -22,14 +22,15 @@ class MyApp extends StatelessWidget {
           title: const Text("Quote Generator"),
           backgroundColor: appBarColor,
         ),
-        body: SafeArea(child: HomePage()),
+        body: SafeArea(child: HomePage(context)),
       ),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final author;
+  HomePage(this.author, {Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -45,14 +46,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
-      Column(
-        children: [
-          buildButton("name", 1),
-          buildButton("name", 1),
-          buildButton("name", 1),
-          buildButton("name", 1),
-          buildButton("name", 1),
-        ],
+      SingleChildScrollView(
+        child: Column(
+          children: [
+            buildButton("name", 1),
+            buildButton("name", 1),
+            buildButton("name", 1),
+            buildButton("name", 1),
+            buildButton("name", 1),
+            Card(
+              elevation: 5,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              child: ListTile(
+                title: Center(
+                    child: Text(
+                        '"The greatest glory in living lies not in never falling, but in rising every time we fall."')),
+              ),
+            ),
+          ],
+        ),
       ),
     ]);
   }
@@ -67,3 +80,12 @@ Widget buildButton(name, order) => ExpansionTile(
         )
       ],
     );
+
+void PickQuote(String author, BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text("data"),
+    ),
+  );
+}
