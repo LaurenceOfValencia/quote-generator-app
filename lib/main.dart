@@ -13,19 +13,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final appBarColor = const Color(0xFFefbb5c);
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: Color(0xFFdb7617),
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Quote Generator"),
-          backgroundColor: appBarColor,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primaryColor: Color(0xFFdb7617),
+          scaffoldBackgroundColor: Colors.white,
         ),
-        body: SafeArea(child: HomePage(context)),
-      ),
-    );
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text("Quote Generator"),
+            backgroundColor: appBarColor,
+          ),
+          body: SafeArea(child: HomePage(context)),
+        ),
+        debugShowCheckedModeBanner: false);
   }
 }
 
